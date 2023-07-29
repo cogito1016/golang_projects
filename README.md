@@ -60,3 +60,13 @@ https://github.com/golang/tools/blob/master/gopls/doc/workspace.md.go list
 ```json
 "experimentalWorkspaceModule": true
 ```
+
+---
+
+## 2.문법
+
+### 2.1.package 사용
+
+- package는 import하여 가져온다.
+- 대문자로 시작하는것들은 Export된다.
+- 따라서 적재한 패키지의 함수를 사용하려면 대문자의것들을 참조해야한다.
