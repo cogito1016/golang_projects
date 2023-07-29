@@ -112,3 +112,8 @@ fmt.Printf("%T, %T, %T\n",a,b,c); //string, int, float64
 a := 1
 fmt.Printf("%T, %d",a,a); //int, 1
 ```
+
+- 초기값이 없이 선언한 변수는 Zero Value를 갖는다.
+  - 숫자형 : 0
+  - bool : false
+  - string : ""
