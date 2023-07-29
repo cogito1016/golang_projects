@@ -77,3 +77,38 @@ https://github.com/golang/tools/blob/master/gopls/doc/workspace.md.go list
 - 연속된 인자가 타입이 같은경우 마지막에만 표기할 수 있다. (x, y int)
 - 한 함수는 복수개의 결과를 반환할 수 있다.
   - func add(x, y int) (int, int) { return x + y, x - y }
+
+### 2.3. 변수
+
+#### 2.3.1. 타입의 종류
+
+- bool
+- string
+- int int8 int16 int32 int64
+- uint uint8 uint16 uint32 uint64 uintptr
+- byte // uint8의 다른 이름
+- rune // int32의 다른 이름
+- float32 float64
+- complex64 complex128
+
+#### 2.3.2. 변수할당
+
+- var 변수명 변수타입
+- var 변수명 = 값 (이때, 변수타입 생략가능 초깃값의 타입을 변수타입으로 사용)
+
+```go
+var a = "Hello?"
+var b = 1
+var c = 0.23
+//or var a,b,c = "Hello?",1,0.23;
+fmt.Printf("%T, %T, %T\n",a,b,c); //string, int, float64
+```
+
+- var과 타입을 생략한 := 를 사용하여 선언과 동시에 초기화 가능
+  - 함수내에서만 사용가능
+  - 함수 밖에서는 var로 선언해야함
+
+```go
+a := 1
+fmt.Printf("%T, %d",a,a); //int, 1
+```

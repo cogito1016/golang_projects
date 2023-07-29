@@ -20,6 +20,9 @@ func main() {
 	fmt.Println(add(22,23));
 	fmt.Println(add01(22,23));
 	fmt.Println(printReverse("Hello","World"));
+	varTest();
+	varTest01();
+	varTest02();
 } 
 
 func add(x int,y int) int{
@@ -32,4 +35,26 @@ func add01(x,y int) int{
 
 func printReverse(x,y string) (string, string){
 	return y,x;
+}
+
+func varTest(){
+	var a bool;
+	var b int;
+	var c float32;
+	var d float64;
+	var e string;
+	fmt.Println(a,b,c,d,e); //false 0 0 0 
+}
+
+func varTest01(){
+	var a = "Hello?"
+	var b = 1
+	var c = 0.23
+	//or var a,b,c = "Hello?",1,0.23;
+	fmt.Printf("%T, %T, %T\n",a,b,c); //string, int, float64
+}
+
+func varTest02(){
+	a := 1
+	fmt.Printf("%T, %d",a,a); //int, 1
 }
