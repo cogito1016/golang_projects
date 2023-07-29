@@ -24,6 +24,7 @@ func main() {
 	varTest01();
 	varTest02();
 	typeTransform();
+	constant();
 } 
 
 func add(x int,y int) int{
@@ -67,4 +68,9 @@ func typeTransform(){
 	fmt.Printf("%T, %f\n",f,f); //float32, 42.000000
 	var u uint = uint(f);
 	fmt.Printf("%T, %d\n",u,u); //uint, 42
+}
+
+func constant(){
+	const PI = 3.14;
+	fmt.Printf("%T, %f\n",PI,PI);
 }
