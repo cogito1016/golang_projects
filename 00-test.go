@@ -17,4 +17,19 @@ func main() {
 	*/
 
 	fmt.Printf("Hello WOrld %g ", math.Sqrt(7));
+	fmt.Println(add(22,23));
+	fmt.Println(add01(22,23));
+	fmt.Println(printReverse("Hello","World"));
 } 
+
+func add(x int,y int) int{
+	return x+y;
+}
+
+func add01(x,y int) int{
+	return x+y;
+}
+
+func printReverse(x,y string) (string, string){
+	return y,x;
+}

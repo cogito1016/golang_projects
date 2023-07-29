@@ -70,3 +70,10 @@ https://github.com/golang/tools/blob/master/gopls/doc/workspace.md.go list
 - package는 import하여 가져온다.
 - 대문자로 시작하는것들은 Export된다.
 - 따라서 적재한 패키지의 함수를 사용하려면 대문자의것들을 참조해야한다.
+
+### 2.2. function
+
+- func 함수명(인자명 인자타입) 리턴타입 { }
+- 연속된 인자가 타입이 같은경우 마지막에만 표기할 수 있다. (x, y int)
+- 한 함수는 복수개의 결과를 반환할 수 있다.
+  - func add(x, y int) (int, int) { return x + y, x - y }
