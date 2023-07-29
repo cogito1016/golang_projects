@@ -23,6 +23,7 @@ func main() {
 	varTest();
 	varTest01();
 	varTest02();
+	typeTransform();
 } 
 
 func add(x int,y int) int{
@@ -56,5 +57,14 @@ func varTest01(){
 
 func varTest02(){
 	a := 1
-	fmt.Printf("%T, %d",a,a); //int, 1
+	fmt.Printf("%T, %d\n",a,a); //int, 1
+}
+
+func typeTransform(){
+	var i int = 42;
+	fmt.Printf("%T, %d\n",i,i); //int, 42
+	var f float32 = float32(i);
+	fmt.Printf("%T, %f\n",f,f); //float32, 42.000000
+	var u uint = uint(f);
+	fmt.Printf("%T, %d\n",u,u); //uint, 42
 }
