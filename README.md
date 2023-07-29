@@ -91,7 +91,7 @@ https://github.com/golang/tools/blob/master/gopls/doc/workspace.md.go list
 - float32 float64
 - complex64 complex128
 
-#### 2.3.2. 변수
+#### 2.3.2. 변수선언
 
 - var 변수명 변수타입
 - var 변수명 = 값 (이때, 변수타입 생략가능 초깃값의 타입을 변수타입으로 사용)
@@ -131,7 +131,7 @@ var u uint = uint(f);
 fmt.Printf("%T, %d\n",u,u); //uint, 42
 ```
 
-#### 2.3.4. 상수
+### 2.4. 상수
 
 - 상수는 const 키워드를 사용하여 선언한다.
 - 상수는 문자, 문자열, boolean, 숫자타입 중 하나의 값만 가질 수 있다.

@@ -72,5 +72,9 @@ func typeTransform(){
 
 func constant(){
 	const PI = 3.14;
-	fmt.Printf("%T, %f\n",PI,PI);
+	fmt.Printf("%T, %f\n",PI,PI);//float64, 3.140000
+	const (
+		Big = 1 << 100
+		Small = Big >> 99
+	)
 }
