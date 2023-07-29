@@ -2,6 +2,11 @@
 
 누가 고랭 좋다고 고랭?
 
+##### 참고
+
+- 고랭 문법 튜토리얼 : https://go-tour-ko.appspot.com/flowcontrol/1
+- 고랭 웹 튜토리얼 : https://gowebexamples.com/
+
 ## 1.세팅
 
 ### 1.1.설치
@@ -60,6 +65,18 @@ https://github.com/golang/tools/blob/master/gopls/doc/workspace.md.go list
 ```json
 "experimentalWorkspaceModule": true
 ```
+
+#### 1.3.3.더 나아가서..
+
+- 이 케이스 뿐만아니라, 여러 go파일을 포함하는 디렉토리를 작업영역으로 설정하면, gopls가 작업영역내의 모듈을 찾지못하는 문제가 발생한다.(오류 문구는 위와 동일)
+- 이때는 작업영역내의 모듈을 찾을 수 있도록 go.mod 파일을 작성해주면 된다.
+- go.mod 파일은 go mod init 명령어로 생성할 수 있다.
+- go.mod 파일이 생성되면, gopls가 작업영역내의 모듈을 찾을 수 있게된다.
+- go.mod 파일은 go.mod 파일이 있는 디렉토리를 기준으로 모듈을 찾는다.
+- 따라서, go.mod 파일을 작성할 때는, 작업영역내의 모듈을 찾을 수 있는 디렉토리를 기준으로 작성해야한다.
+- 예를들어, 작업영역이 ~/go/src/github.com/username/project 이고, 모듈이 ~/go/src/github.com/username/project/module 이라면, go.mod 파일은 ~/go/src/github.com/username/project 디렉토리에 생성해야한다.
+- go.mod 파일을 생성하고 나면, gopls가 작업영역내의 모듈을 찾을 수 있게된다.
+- go.mod 파일을 생성하고 나면, go.mod 파일이 있는 디렉토리를 기준으로 go build, go run 등의 명령어를 사용할 수 있다.
 
 ---
 
