@@ -6,6 +6,7 @@
 
 - 고랭 문법 튜토리얼 : https://go-tour-ko.appspot.com/flowcontrol/1
 - 고랭 웹 튜토리얼 : https://gowebexamples.com/
+- 고랭 모듈 튜토리얼 : https://go.dev/doc/tutorial/create-module
 
 ## 1.세팅
 
@@ -159,3 +160,23 @@ fmt.Printf("%T, %d\n",u,u); //uint, 42
 const PI = 3.14;
 fmt.Printf("%T, %f\n",PI,PI);//float64, 3.140000
 ```
+
+---
+
+## 3.모듈
+
+### 3.1.에러
+
+#### 3.1.1. Broken Import 에러
+
+배경
+
+- greetings/ 에 go.mod와 greetings.go가 존재
+- hello/ 에 go.mod와 hello.go가 존재
+- hello.go에서 greetings를 import하려고할때 아래의 에러가 발생한다.
+
+```bash
+could not import example.com/greetings (cannot find package "example.com/greetings" in GOROOT or GOPATH)compilerBrokenImport
+```
+
+- 그러나 정상동작은 함 (..)
