@@ -25,6 +25,8 @@ func main() {
 	varTest02();
 	typeTransform();
 	constant();
+	a, _ := printReverse("Hello","World");
+	fmt.Println(a);
 } 
 
 func add(x int,y int) int{
