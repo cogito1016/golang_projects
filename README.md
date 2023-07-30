@@ -89,6 +89,30 @@ https://github.com/golang/tools/blob/master/gopls/doc/workspace.md.go list
 - GO에는 package.json같은 역할을 하는곳이 없다.
 - /users/username/go에 /src/ 폴더를만들고 그 안에 다운로드 받은 코드들을 저장한다.
   - ex) ~/go/src/github.com/username/project 와 같이 말이다.
+- 나는 별도의 workspace경로를 가지고있어, ~/go/src/github.com/cogito1016/golang에 지금까지의 프로젝트를 저장하고, 별도의 workspace경로를 심볼릭링크 처리했다.(그런데 VSCode IDE가 재기능을 하지못한다, 따라서 심볼릭 링크만 걸어주고 작업은 ~/go/src/github.com/cogito1016/golang에서 진행한다.)
+- 이렇게하니까 기존에 나타나던 'gopls가 작업영역에서 모듈을 찾지못하는 문제'는 사라졌다. "experimentalWorkspaceModule": true 를 삭제했음에도 불구하고 말이다.
+- 또한 go.mod를 다 지우고 아래처럼 동작이 가능하다.
+
+```go
+import (
+	"fmt"
+
+	"github.com/cogito1016/golang/01-module/greetings"
+)
+
+func main() {
+    // Get a greeting message and print it.
+    message := greetings.Hello("Gladys");
+    fmt.Println(message)
+}
+```
+
+## 1.4.main
+
+- go는 main 패키지를 가지고있어야한다.
+- main 패키지는 main 함수를 가지고있어야한다.
+- main 함수는 인자를 받지않고, 리턴값을 가지지않는다.
+- 컴파일러는 main 패키지를 컴파일하고, main 함수를 실행한다.
 
 ---
 

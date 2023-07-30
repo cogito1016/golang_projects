@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 
-	"example.com/greetings"
+	"github.com/cogito1016/golang/01-module/greetings"
 )
 
 func main() {
     // Get a greeting message and print it.
-    message := greetings.Hello("Gladys")
+    message := greetings.Hello("Gladys");
     fmt.Println(message)
 }
