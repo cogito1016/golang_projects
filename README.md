@@ -42,7 +42,7 @@ Installing golang.org/x/tools/gopls@latest (~/bin/gopls) SUCCEEDED
 All tools successfully installed. You are ready to Go. :)
 ```
 
-### 1.3.gopls가 작업영역에서 모듈을 찾지못하는 문제
+#### 1.2.2.gopls가 작업영역에서 모듈을 찾지못하는 문제
 
 ```bash
 gopls was not able to find modules in your workspace.
@@ -55,11 +55,11 @@ https://github.com/golang/tools/blob/master/gopls/doc/workspace.md.go list
 
 - 오류는 위와같은데 저 링크들어가면 404뜸. 쫌마니당혹쓰
 
-#### 1.3.1.원인
+##### 1.2.2.1.원인
 
 - 여러 디렉토리에 go module 존재하면 생기는 문제
 
-#### 1.3.2.조치
+##### 1.2.2.2.조치
 
 - Settings > gopls > Edit in settings.json > gopls json 영역에 아래설정 추가
 
@@ -67,7 +67,7 @@ https://github.com/golang/tools/blob/master/gopls/doc/workspace.md.go list
 "experimentalWorkspaceModule": true
 ```
 
-#### 1.3.3.더 나아가서..
+##### 1.2.2.3.더 나아가서..
 
 - 이 케이스 뿐만아니라, 여러 go파일을 포함하는 디렉토리를 작업영역으로 설정하면, gopls가 작업영역내의 모듈을 찾지못하는 문제가 발생한다.(오류 문구는 위와 동일)
 - 이때는 작업영역내의 모듈을 찾을 수 있도록 go.mod 파일을 작성해주면 된다.
@@ -78,6 +78,17 @@ https://github.com/golang/tools/blob/master/gopls/doc/workspace.md.go list
 - 예를들어, 작업영역이 ~/go/src/github.com/username/project 이고, 모듈이 ~/go/src/github.com/username/project/module 이라면, go.mod 파일은 ~/go/src/github.com/username/project 디렉토리에 생성해야한다.
 - go.mod 파일을 생성하고 나면, gopls가 작업영역내의 모듈을 찾을 수 있게된다.
 - go.mod 파일을 생성하고 나면, go.mod 파일이 있는 디렉토리를 기준으로 go build, go run 등의 명령어를 사용할 수 있다.
+
+## 1.3.GOPATH
+
+- GO를 설치하면 기본적으로 /Users/username/go에 설치된다.
+- 기본적으로 이곳이 GOPATH이며, 이곳에만 코드를 작성할 수 있다.
+
+### 1.3.1.GO의 프로젝트 구조
+
+- GO에는 package.json같은 역할을 하는곳이 없다.
+- /users/username/go에 /src/ 폴더를만들고 그 안에 다운로드 받은 코드들을 저장한다.
+  - ex) ~/go/src/github.com/username/project 와 같이 말이다.
 
 ---
 
