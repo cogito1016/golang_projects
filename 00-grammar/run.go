@@ -1,11 +1,12 @@
 package main
 
 import (
-	if_state "github.com/cogito1016/golang/00-grammar/if"
+	"github.com/cogito1016/golang/00-grammar/pointer"
 )
 
 func main(){
 	// grammar.Run();
 	// for_state.Run();
-	if_state.Run();
+	// if_state.Run();
+	pointer.Run();
 }
