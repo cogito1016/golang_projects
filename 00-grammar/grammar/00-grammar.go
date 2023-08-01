@@ -1,4 +1,4 @@
-package main
+package grammar
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 
 //factored import statement
 
-func main() {
+func Run() {
 
 	/*
 	GO에서는 대문자로 시작하는 이름이 Export된다.
