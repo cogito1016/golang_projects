@@ -230,6 +230,26 @@ func forNumbers03(numbers ...int) int{
 }
 ```
 
+### 2.6. 조건문
+
+```go
+func canDrink(age int) bool{
+	if age > 18{
+		return true;
+	}
+
+	return false;
+}
+
+func canDrink2(age int) bool{
+	if koreanAge := age+2; koreanAge>18{
+		return true;
+	}
+
+	return false;
+}
+```
+
 ---
 
 ## 3.모듈
