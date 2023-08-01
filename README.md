@@ -202,6 +202,34 @@ const PI = 3.14;
 fmt.Printf("%T, %f\n",PI,PI);//float64, 3.140000
 ```
 
+### 2.5. 반복문
+
+```go
+
+func forNumbers01(numbers ...int) int{
+	for number := range numbers{
+		fmt.Println(number);
+	}
+
+	return 0;
+}
+
+func forNumbers02(numbers ...int) int{
+	for idx,value := range numbers{
+		fmt.Println(idx,value);
+	}
+	return 0;
+}
+
+func forNumbers03(numbers ...int) int{
+	for i := 0; i< len(numbers); i++{
+		fmt.Println(i,numbers[i]);
+	}
+
+	return 0;
+}
+```
+
 ---
 
 ## 3.모듈
