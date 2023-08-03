@@ -123,6 +123,11 @@ func main() {
 - package는 import하여 가져온다.
 - 대문자로 시작하는것들은 Export된다.
 - 따라서 적재한 패키지의 함수를 사용하려면 대문자의것들을 참조해야한다.
+- 같은 디렉토리 내의 go파일들은 같은 패키지를 사용해야한다. (아닐 시 아래 오류발생)
+
+```bash
+found packages print_problem (basic_print.go) and print_problemㅁ (boj_1002.go)
+```
 
 ### 2.2. 함수
 
