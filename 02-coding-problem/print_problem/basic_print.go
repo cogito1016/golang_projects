@@ -1,7 +1,7 @@
-package basic_print
+package print_problem
 
 import "fmt"
 
-func Run(){
+func RunBasicPrint(){
 	fmt.Println("Hello WOrld!?");
 }

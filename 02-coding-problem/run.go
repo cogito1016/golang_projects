@@ -3,10 +3,11 @@ package main
 import (
 	"fmt"
 
-	basic_print "github.com/cogito1016/golang/02-coding-problem/print"
+	"github.com/cogito1016/golang/02-coding-problem/print_problem"
 )
 
 func main(){
 	fmt.Println("Hello World")
-	basic_print.Run();
+	print_problem.RunBasicPrint();
+	print_problem.RunBoj1002()
 }
