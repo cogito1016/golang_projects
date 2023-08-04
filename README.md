@@ -277,6 +277,32 @@ func canDrink2(age int) bool{
 
 ```
 
+### 2.8.배열
+
+- basic array
+
+```go
+names := []string{"kim","lee"};
+// names[2] = "park"; 오류발생
+names = append(names,"park"); //append는 원본을변경하지않고 새로운배열을 반환한다.
+
+for idx,name := range names{
+	fmt.Println(idx,name);
+}
+```
+
+- slice
+
+```go
+names := []string{"kim","lee"};
+// names[2] = "park"; 오류발생
+names = append(names,"park"); //append는 원본을변경하지않고 새로운배열을 반환한다.
+
+for idx,name := range names{
+	fmt.Println(idx,name);
+}
+```
+
 ## 3.모듈
 
 ### 3.1.에러
