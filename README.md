@@ -283,7 +283,7 @@ func canDrink2(age int) bool{
 
 #### 3.1.1. Broken Import 에러
 
-배경
+##### 3.1.1.1. 배경
 
 - greetings/ 에 go.mod와 greetings.go가 존재
 - hello/ 에 go.mod와 hello.go가 존재
@@ -294,3 +294,20 @@ could not import example.com/greetings (cannot find package "example.com/greetin
 ```
 
 - 그러나 정상동작은 함 (..)
+
+##### 3.1.1.1. 조치
+
+- 일단 기본적으로 위의 구조가 잘못되었었다.
+- go.mod는 디렉토리구조의 최상단에 위치되어야하며, 위의 케이스처럼 greetings와 hello에 각각 위치되면안된다.
+- 따라서 아래와 같이 구조를 변경해주었다.
+
+```bash
+golang
+├── go.mod
+├── greetings
+│   └── greetings.go
+└── hello
+	└── hello.go
+```
+
+## 4. 웹
