@@ -303,6 +303,27 @@ for idx,name := range names{
 }
 ```
 
+- array에는 :(콜론)개념이 있는데,이는 배열의 범위를 지정해주는 역할을 한다
+
+```go
+for i := 0; i < 10; i++ {
+	arr = append(arr,i+1);
+}
+
+fmt.Println(arr);//[1 2 3 4 5 6 7 8 9 10]
+fmt.Println(arr[0:5]);//[1 2 3 4 5]
+fmt.Println(arr[:3]);//[1 2 3]
+fmt.Println(arr[2:3]);//[3]
+fmt.Println(arr[3:]);//[4 5 6 7 8 9 10]
+```
+
+- append는 중요한개념이다.
+  - append(대상배열, 추가할값1, 추가할값2..)
+  - :(콜론)을 조합하여서 쓸 수 있다
+  ```go
+  arr = append(arr[:2],arr[3:]...);
+  ```
+
 ## 3.모듈
 
 ### 3.1.에러
