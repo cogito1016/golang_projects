@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/cogito1016/golang/02-coding-problem/array_problem"
+	"github.com/cogito1016/golang/02-coding-problem/memoization_problem"
 )
 
 func main(){
@@ -9,5 +9,6 @@ func main(){
 	// print_problem.RunBasicPrint();
 	// print_problem.RunBoj1002()
 	// print_problem.RunBoj25314()
-	array_problem.Run();
+	// array_problem.RunBoj10811();
+	memoization_problem.RunBoj1920();
 }

@@ -2,7 +2,7 @@ package array_problem
 
 import "fmt"
 
-func Run(){
+func RunBoj10811(){
 	var N int;
 	var M int;
 	var arr []int;

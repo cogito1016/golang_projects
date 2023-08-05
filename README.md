@@ -2,6 +2,9 @@
 
 누가 고랭 좋다고 고랭?
 
+- 23.08.05
+  - 이야.. 이거 다만들어써야되네..
+
 ##### 참고
 
 - 고랭 문법 튜토리얼 : https://go-tour-ko.appspot.com/flowcontrol/1
@@ -318,10 +321,27 @@ fmt.Println(arr[3:]);//[4 5 6 7 8 9 10]
 ```
 
 - append는 중요한개념이다.
+
   - append(대상배열, 추가할값1, 추가할값2..)
   - :(콜론)을 조합하여서 쓸 수 있다
+
   ```go
   arr = append(arr[:2],arr[3:]...);
+  ```
+
+  ### 2.9.Map
+
+  ```go
+  jayden := map[string]string{"name":"jayden","age":"18"}
+  fmt.Println(jayden);//map[age:18 name:jayden]
+
+  for key,value := range jayden{
+  fmt.Println(key, value);
+  /**
+  name jayden
+  age 18
+  **/
+  }
   ```
 
 ## 3.모듈
