@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/cogito1016/golang/02-coding-problem/print_problem"
+	"github.com/cogito1016/golang/02-coding-problem/branch_problem"
 )
 
 func main(){
@@ -15,5 +15,6 @@ func main(){
 	// print_problem.RunBoj10869();
 	// array_problem.RunBoj10810();
 	// print_problem.RunBoj10699()
-	print_problem.RunBoj7287(); 
+	// print_problem.RunBoj7287(); 
+	branch_problem.RunBoj2420();
 }

@@ -177,3 +177,14 @@ t = t.In(loc);
 //포멧설정
 t := time.Now().Format("2006-01-02");
 ```
+
+### 3.4. 수학을 다룰 때 math 패키지
+
+- math 패키지를 사용한다.
+- math.Abs()는 절대값을 구하는 함수이다.
+  - math.Abs(float64)를 사용한다.
+  - 따라서 int형을 넣어주기 위해서는 math.Abs(float64(int형))을 사용한다.
+
+```go
+N = int(math.Abs(float64(N)));
+```
