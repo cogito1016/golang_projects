@@ -11,5 +11,6 @@ func main(){
 	// print_problem.RunBoj25314()
 	// array_problem.RunBoj10811();
 	// memoization_problem.RunBoj1920();
-	print_problem.RunBoj10172()
+	// print_problem.RunBoj10172()
+	print_problem.RunBoj10869();
 }
