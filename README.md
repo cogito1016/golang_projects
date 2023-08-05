@@ -331,6 +331,26 @@ fmt.Println(arr[3:]);//[4 5 6 7 8 9 10]
   arr = append(arr[:2],arr[3:]...);
   ```
 
+- make를 사용하여 쉽게 배열을 생성할 수 있다.
+
+  - make(타입, 길이, 용량)
+
+  ```go
+  arr := make([]int, 5, 10);
+  fmt.Println(arr);//[0 0 0 0 0]
+  fmt.Println(len(arr));//5
+  fmt.Println(cap(arr));//10
+  ```
+
+  - 2차원배열 생성
+
+  ```go
+  arr := make([][]int,M);
+  for i := 0; i < N; i++ {
+  	arr[i] = make([]int,N);
+  }
+  ```
+
 ### 2.9.Map
 
 ```go
