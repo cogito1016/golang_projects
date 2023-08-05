@@ -144,3 +144,36 @@ func Run(){
 	strconv.ParseUint("12345", 10, 64) //12345
 }
 ```
+
+### 3.3. 날짜를 다룰 때 time 패키지
+
+- 충격적이다..
+
+```go
+package print_problem
+
+import (
+	"fmt"
+	"time"
+)
+
+func RunBoj10699(){
+	t := time.Now().UTC().Format("2006-01-02"); //이때 2006-01-02는 고정된 값이다.
+	fmt.Println(t);
+}
+```
+
+#### 3.3.1. 2006-01-02란?
+
+- 2006-01-02 15:04:05 는 날짜를 나타내는 것이 아닌 yyyy-mm-dd hh:mm:ss 를 의미합니다. 해당 날짜는 아무 무작위로 한 것처럼 보이지만 뜻이 숨어있음
+- 2006년 1월 2일 3시 4분 5초는 time 패키지에서 제공하는 기본값이다.
+
+```go
+//로케이션설정
+loc,_ := time.LoadLocation("Asia/Seoul");
+t := time.Now();
+t = t.In(loc);
+
+//포멧설정
+t := time.Now().Format("2006-01-02");
+```
