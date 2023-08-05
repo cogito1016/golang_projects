@@ -4,6 +4,8 @@
 
 - 23.08.05
   - 이야.. 이거 다만들어써야되네..
+  - 코딩테스트의 메모내용
+  - https://github.com/cogito1016/golang_projects/tree/main/02-coding-problem
 
 ##### 참고
 
