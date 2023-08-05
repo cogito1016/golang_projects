@@ -1,8 +1,6 @@
 package main
 
-import (
-	"github.com/cogito1016/golang/02-coding-problem/memoization_problem"
-)
+import "github.com/cogito1016/golang/02-coding-problem/memoization_problem"
 
 func main(){
 	// fmt.Println("Hello World")

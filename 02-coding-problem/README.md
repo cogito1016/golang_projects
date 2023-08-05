@@ -1,5 +1,13 @@
 # GO언어 백준 풀이 팁
 
+## 0.오류
+
+```bash
+panic: assignment to entry in nil map
+```
+
+- map을 초기화하지 않고 사용하면 위와 같은 오류가 발생한다.
+
 ## 1. 패키지
 
 - 패키지는 main
@@ -18,11 +26,121 @@ for i := 0; i < N; i++ {
 }
 ```
 
-### 2.2. array에 값 유무체크 (contains, find ...)
+## 3. 패키지활용
 
-- 없다..는데.. 진짜인가?
-- 그냥 반복문을 돌려서 체크한다.
+### 3.1. bufio 입출력 패키지
+
+- bufio를 사용하면 입출력 속도가 빨라진다.
 
 ```go
 
+import (
+"bufio"
+"fmt"
+"os"
+)
+
+func Run(){
+//bufio패키지를 사용한 입력 예시
+
+    //1. bufio.NewReader(os.Stdin)을 통해 입력을 받을 준비를 한다.
+    //2. 준비된 입력을 통해 입력을 받는다.
+    //3. 입력받은 내용을 출력한다.
+    reader := bufio.NewReader(os.Stdin);
+    fmt.Println("Enter your name: ");
+    name, _ := reader.ReadString('\n');
+    fmt.Println("Hello, ", name);
+
+	//Scanner를 사용한 입력 예시
+	//1. bufio.NewScanner(os.Stdin)을 통해 입력을 받을 준비를 한다.
+	//2. 준비된 입력을 통해 입력을 받는다.
+	//3. 입력받은 내용을 출력한다.
+	scanner := bufio.NewScanner(os.Stdin);
+	fmt.Println("Enter your name: ");
+	scanner.Scan();
+	name2 := scanner.Text();
+	fmt.Println("Hello, ", name2);
+
+	//Reader와 Scanner의 차이점
+	//1. Reader는 줄바꿈 문자를 포함한 한 줄을 읽어들인다.
+	//2. Scanner는 줄바꿈 문자를 포함하지 않은 한 줄을 읽어들인다.
+
+    //bufio패키지를 사용한 출력 예시
+    //1. bufio.NewWriter(os.Stdout)을 통해 출력을 받을 준비를 한다.
+    //2. 버퍼에 출력할 내용을 쌓는다.
+    //3.Flush()를 통해 버퍼에 내용을 출력한다.
+    writer := bufio.NewWriter(os.Stdout);
+    fmt.Fprint(writer, "Hello, ");
+    writer.Flush();
+}
+```
+
+### 3.2. 형변환을 할 때 strconv 패키지
+
+- strconv 패키지를 사용한다.
+
+```go
+package strconv_prac
+
+import "strconv"
+
+func Run(){
+	//strconv.Itoa()
+	//정수 -> 문자열
+	//문자열로 변환된 값 반환
+	strconv.Itoa(12345) //"12345"
+	strconv.Itoa(-12345) //"-12345"
+
+	//strconv.Atoi()
+	//문자열 -> 정수
+	//문자열로 변환된 값 반환
+	strconv.Atoi("12345") //12345
+	strconv.Atoi("-12345") //-12345
+
+	//strconv.FormatFloat()
+	//실수 -> 문자열
+	//문자열로 변환된 값 반환
+	strconv.FormatFloat(1.2345, 'f', 2, 64) //"1.23"
+	strconv.FormatFloat(1.2345, 'e', 2, 64) //"1.23e+00"
+
+	//strconv.ParseFloat()
+	//문자열 -> 실수
+	//문자열로 변환된 값 반환
+	strconv.ParseFloat("1.2345", 64) //1.2345
+	strconv.ParseFloat("1.2345e+00", 64) //1.2345
+
+	//strconv.FormatBool()
+	//불리언 -> 문자열
+	//문자열로 변환된 값 반환
+	strconv.FormatBool(true) //"true"
+	strconv.FormatBool(false) //"false"
+
+	//strconv.ParseBool()
+	//문자열 -> 불리언
+	//문자열로 변환된 값 반환
+	strconv.ParseBool("true") //true
+	strconv.ParseBool("false") //false
+
+	//strconv.FormatInt()
+	//정수 -> 문자열
+	//문자열로 변환된 값 반환
+	strconv.FormatInt(12345, 10) //"12345"
+	strconv.FormatInt(-12345, 10) //"-12345"
+
+	//strconv.ParseInt()
+	//문자열 -> 정수
+	//문자열로 변환된 값 반환
+	strconv.ParseInt("12345", 10, 64) //12345
+	strconv.ParseInt("-12345", 10, 64) //-12345
+
+	//strconv.FormatUint()
+	//정수 -> 문자열
+	//문자열로 변환된 값 반환
+	strconv.FormatUint(12345, 10) //"12345"
+
+	//strconv.ParseUint()
+	//문자열 -> 정수
+	//문자열로 변환된 값 반환
+	strconv.ParseUint("12345", 10, 64) //12345
+}
 ```
