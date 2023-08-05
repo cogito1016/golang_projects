@@ -329,20 +329,40 @@ fmt.Println(arr[3:]);//[4 5 6 7 8 9 10]
   arr = append(arr[:2],arr[3:]...);
   ```
 
-  ### 2.9.Map
+### 2.9.Map
 
-  ```go
-  jayden := map[string]string{"name":"jayden","age":"18"}
-  fmt.Println(jayden);//map[age:18 name:jayden]
+```go
+jayden := map[string]string{"name":"jayden","age":"18"}
+fmt.Println(jayden);//map[age:18 name:jayden]
 
-  for key,value := range jayden{
-  fmt.Println(key, value);
-  /**
-  name jayden
-  age 18
-  **/
-  }
-  ```
+for key,value := range jayden{
+fmt.Println(key, value);
+/**
+name jayden
+age 18
+**/
+}
+```
+
+### 2.10 Struct
+
+```go
+type person struct {//구조체
+	//생성자는없음
+	name string
+	age int
+	favFood []string
+}
+
+func Run(){
+	fmt.Println("Struct Test");
+	favFood := []string{"apple"};
+	jayden := person{name:"jayden",age:18,favFood:favFood}
+	//jayden := person{"jayden",18,favFood} 이렇게 사용해도 됨
+	fmt.Println(jayden);//{jayden 18 [apple]}
+	fmt.Println(jayden.favFood);//[apple]
+}
+```
 
 ## 3.모듈
 
