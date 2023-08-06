@@ -20,5 +20,6 @@ func main(){
 	// array_problem.RunBoj2738()
 	// string_problem.RunBoj2743();
 	// string_problem.RunBoj2744();
-	string_problem.RunBoj27866();
+	// string_problem.RunBoj27866();
+	string_problem.RunBoj2754()
 }
