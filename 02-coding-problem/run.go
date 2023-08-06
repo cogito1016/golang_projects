@@ -23,5 +23,6 @@ func main(){
 	// string_problem.RunBoj27866();
 	// string_problem.RunBoj2754()
 	// string_problem.RunBoj9086();
-	function_problem.RunBoj15964();
+	// function_problem.RunBoj15964();
+	function_problem.RunBoj2475();
 }
