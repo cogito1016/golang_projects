@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"unicode"
 )
 
 func RunBoj2744(){
@@ -12,12 +13,11 @@ func RunBoj2744(){
 	str := scanner.Text();
 
 	for _,char := range str{
-		if char>=97 {
-			char -= 32;
-		}else{
-			char += 32;
+		if unicode.IsUpper(char){
+			fmt.Printf("%c", unicode.ToLower(char));
+			continue;
 		}
 
-		fmt.Printf("%c",char);
+		fmt.Printf("%c",unicode.ToUpper(char));
 	}
 }
