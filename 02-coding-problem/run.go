@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/cogito1016/golang/02-coding-problem/string_problem"
+	"github.com/cogito1016/golang/02-coding-problem/function_problem"
 )
 
 func main(){
@@ -22,5 +22,6 @@ func main(){
 	// string_problem.RunBoj2744();
 	// string_problem.RunBoj27866();
 	// string_problem.RunBoj2754()
-	string_problem.RunBoj9086();
+	// string_problem.RunBoj9086();
+	function_problem.RunBoj15964();
 }
