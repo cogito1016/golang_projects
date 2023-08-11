@@ -75,6 +75,9 @@ func Run(){
 }
 ```
 
+- 입력받은 데이터를 숫자로 처리할 때,
+  - itoa를 사용하기보다는 byte[] (scanner.text())를 사용해도 좋다.
+
 ### 3.2. 형변환을 할 때 strconv 패키지
 
 - strconv 패키지를 사용한다.
