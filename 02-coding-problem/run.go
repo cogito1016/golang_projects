@@ -1,6 +1,6 @@
 package main
 
-import "github.com/cogito1016/golang/02-coding-problem/string_problem"
+import "github.com/cogito1016/golang/02-coding-problem/math_problem"
 
 func main(){
 	// fmt.Println("Hello World")
@@ -23,6 +23,6 @@ func main(){
 	// string_problem.RunBoj9086();
 	// function_problem.RunBoj15964();
 	// function_problem.RunBoj2475();
-	string_problem.RunBoj1259();
-	// math_problem.RunBoj2609();
+	// string_problem.RunBoj1259();
+	math_problem.RunBoj2609();
 }
