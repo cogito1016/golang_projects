@@ -27,5 +27,5 @@ func main(){
 	// math_problem.RunBoj2609();
 	// math_problem.RunBoj11050();
 	// math_problem.RunBoj1978();
-	math_problem.RunBoj4153();
+	math_problem.RunBoj4153Refactor();
 }

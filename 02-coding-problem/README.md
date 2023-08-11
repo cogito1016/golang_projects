@@ -76,7 +76,11 @@ func Run(){
 ```
 
 - 입력받은 데이터를 숫자로 처리할 때,
+
   - itoa를 사용하기보다는 byte[] (scanner.text())를 사용해도 좋다.
+
+- "0 0 0" , "abc def gii" 등과같이 split이 필요하다면
+  - split말고 strings.Fields()를 사용하면 배열이된다
 
 ### 3.2. 형변환을 할 때 strconv 패키지
 
