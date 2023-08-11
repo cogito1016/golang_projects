@@ -152,9 +152,14 @@ func Run(){
 }
 ```
 
-### 3.3. 날짜를 다룰 때 time 패키지
+- 형변환 오류
+  - any로 받는것들은 {any type value}.(type)으로 변환을 시켜줘야한다.
 
-- 충격적이다..
+```bash
+cannot use value (variable of type any) as int value in argument to strconv.Itoa: need type assertion
+```
+
+### 3.3. 날짜를 다룰 때 time 패키지
 
 ```go
 package print_problem
