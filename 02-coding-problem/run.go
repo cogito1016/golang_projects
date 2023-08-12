@@ -30,5 +30,5 @@ func main() {
 	// math_problem.RunBoj4153Refactor();
 	// linked_list_problem.RunBoj11866();
 	//deque_problem.RunBoj10866();
-	bruteforce_problem.RunBoj2231()
+	bruteforce_problem.RunBoj2231Refactor()
 }
