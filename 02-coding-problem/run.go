@@ -1,10 +1,6 @@
 package main
 
-import (
-	"github.com/cogito1016/golang/02-coding-problem/deque_problem"
-)
-
-func main(){
+func main() {
 	// fmt.Println("Hello World")
 	// print_problem.RunBasicPrint();
 	// print_problem.RunBoj1002()
@@ -31,5 +27,5 @@ func main(){
 	// math_problem.RunBoj1978();
 	// math_problem.RunBoj4153Refactor();
 	// linked_list_problem.RunBoj11866();
-	deque_problem.RunBoj10866();
+	//deque_problem.RunBoj10866();
 }

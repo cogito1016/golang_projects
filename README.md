@@ -424,4 +424,22 @@ golang
 	└── hello.go
 ```
 
-## 4. 웹
+## 4. 디버그
+
+- VScode를 이용한 디버그
+	- 못해먹겠다 그냥 Jetbrains GO land살까
+
+1. 왼쪽 Run and Debug 버튼 클릭
+2. Add Configuration을 통해 launch.json 생성
+3. Delve디버거를 설치(VS코드에서 go를 디버그할때 사용, 없으면 하단 오류 발생, 설치해주자)
+
+```bash
+Couldn't start dlv dap:
+Error: Cannot find Delve debugger (dlv dap)
+```
+
+```bash
+go get github.com/go-delve/delve/cmd/dlv
+```
+
+4.
