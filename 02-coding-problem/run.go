@@ -1,5 +1,7 @@
 package main
 
+import "github.com/cogito1016/golang/02-coding-problem/bruteforce_problem"
+
 func main() {
 	// fmt.Println("Hello World")
 	// print_problem.RunBasicPrint();
@@ -11,7 +13,7 @@ func main() {
 	// print_problem.RunBoj10869();
 	// array_problem.RunBoj10810();
 	// print_problem.RunBoj10699()
-	// print_problem.RunBoj7287(); 
+	// print_problem.RunBoj7287();
 	// branch_problem.RunBoj2420();
 	// array_problem.RunBoj2738()
 	// string_problem.RunBoj2743();
@@ -28,4 +30,5 @@ func main() {
 	// math_problem.RunBoj4153Refactor();
 	// linked_list_problem.RunBoj11866();
 	//deque_problem.RunBoj10866();
+	bruteforce_problem.RunBoj2231()
 }
