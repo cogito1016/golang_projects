@@ -1,4 +1,4 @@
-package which
+package main
 
 import (
 	"fmt"
@@ -7,7 +7,8 @@ import (
 	"time"
 )
 
-func Witch(filename string) {
+func main() { //go run ./05-real-usable-package/which/which.go dlv
+	filename := os.Args[1]
 	now := time.Now()
 
 	result := false
