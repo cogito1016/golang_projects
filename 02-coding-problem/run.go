@@ -1,8 +1,6 @@
 package main
 
-import (
-	"github.com/cogito1016/golang/02-coding-problem/string_problem"
-)
+import "github.com/cogito1016/golang/02-coding-problem/string_problem"
 
 func main() {
 	// fmt.Println("Hello World")
@@ -34,5 +32,6 @@ func main() {
 	//deque_problem.RunBoj10866();
 	//bruteforce_problem.RunBoj2231Refactor()
 	//bruteforce_problem.RunBoj1436()
-	string_problem.RunBoj4999()
+	//string_problem.RunBoj4999()
+	string_problem.RunBoj4659()
 }
