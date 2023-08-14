@@ -34,5 +34,6 @@ func main() {
 	//bruteforce_problem.RunBoj1436()
 	//string_problem.RunBoj4999()
 	//string_problem.RunBoj4659()
-	string_problem.RunBoj5555()
+	//string_problem.RunBoj5555()
+	string_problem.RunBoj5635()
 }
