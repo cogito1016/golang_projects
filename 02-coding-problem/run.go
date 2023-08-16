@@ -1,6 +1,6 @@
 package main
 
-import "github.com/cogito1016/golang/02-coding-problem/string_problem"
+import "github.com/cogito1016/golang/02-coding-problem/data_structure_problem"
 
 func main() {
 	// fmt.Println("Hello World")
@@ -36,5 +36,6 @@ func main() {
 	//string_problem.RunBoj4659()
 	//string_problem.RunBoj5555()
 	//string_problem.RunBoj5635()
-	string_problem.RunBoj25206()
+	//string_problem.RunBoj25206()
+	data_structure_problem.RunBoj2161()
 }
