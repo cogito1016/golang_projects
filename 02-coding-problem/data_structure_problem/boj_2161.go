@@ -31,25 +31,4 @@ func RunBoj2161() {
 		arr = arr[1:]
 
 	}
-
-	//if N%2 == 0 {
-	//	start := 1
-	//	weight := 2
-	//	count := 0
-	//
-	//	for count < N {
-	//		for i := start; i <= N; i = i + weight {
-	//			str := strconv.Itoa(i)
-	//			writer.WriteString(str + " ")
-	//			count++
-	//			if count >= N {
-	//				break
-	//			}
-	//		}
-	//		start = start * 2
-	//		weight = weight * 2
-	//	}
-	//} else {
-	//}
-
 }
