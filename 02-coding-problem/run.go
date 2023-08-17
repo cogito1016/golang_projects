@@ -37,5 +37,8 @@ func main() {
 	//string_problem.RunBoj5555()
 	//string_problem.RunBoj5635()
 	//string_problem.RunBoj25206()
-	data_structure_problem.RunBoj2161()
+	//data_structure_problem.RunBoj2161()
+	//data_structure_problem.RunBoj10815()
+	//data_structure_problem.RunBoj4949()
+	data_structure_problem.RunBoj10773()
 }
