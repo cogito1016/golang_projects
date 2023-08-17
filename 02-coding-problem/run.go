@@ -40,5 +40,6 @@ func main() {
 	//data_structure_problem.RunBoj2161()
 	//data_structure_problem.RunBoj10815()
 	//data_structure_problem.RunBoj4949()
-	data_structure_problem.RunBoj10773()
+	//data_structure_problem.RunBoj10773()
+	data_structure_problem.RunBoj14425()
 }
