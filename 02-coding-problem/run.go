@@ -43,5 +43,5 @@ func main() {
 	//data_structure_problem.RunBoj10773()
 	//data_structure_problem.RunBoj14425()
 	//string_problem.RunBoj10808()
-	print_problem.RunBoj2558()
+	print_problem.RunBoj2338()
 }
