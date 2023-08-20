@@ -1,6 +1,6 @@
 package main
 
-import "github.com/cogito1016/golang/02-coding-problem/dynamic_programming_problem"
+import "github.com/cogito1016/golang/02-coding-problem/implement_problem"
 
 func main() {
 	// fmt.Println("Hello World")
@@ -44,5 +44,8 @@ func main() {
 	//data_structure_problem.RunBoj14425()
 	//string_problem.RunBoj10808()
 	//print_problem.RunBoj2338()
-	dynamic_programming_problem.RunBoj24416()
+	//dynamic_programming_problem.RunBoj24416()
+	//dynamic_programming_problem.RunBoj1010()
+	//sort_problem.RunBoj23968()
+	implement_problem.RunBoj1475()
 }
