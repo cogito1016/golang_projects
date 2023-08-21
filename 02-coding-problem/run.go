@@ -1,6 +1,6 @@
 package main
 
-import "github.com/cogito1016/golang/02-coding-problem/implement_problem"
+import "github.com/cogito1016/golang/02-coding-problem/recursive_problem"
 
 func main() {
 	// fmt.Println("Hello World")
@@ -47,5 +47,6 @@ func main() {
 	//dynamic_programming_problem.RunBoj24416()
 	//dynamic_programming_problem.RunBoj1010()
 	//sort_problem.RunBoj23968()
-	implement_problem.RunBoj1475()
+	//implement_problem.RunBoj1475()
+	recursive_problem.RunPrac01()
 }
