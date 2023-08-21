@@ -2,6 +2,7 @@ package recursive_problem
 
 import "fmt"
 
+// 1~n까지의 곱
 func RunPrac01() {
 	fmt.Println(multiple_recursive(5))
 	fmt.Println(multiple_for(5))

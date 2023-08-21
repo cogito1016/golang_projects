@@ -48,5 +48,6 @@ func main() {
 	//dynamic_programming_problem.RunBoj1010()
 	//sort_problem.RunBoj23968()
 	//implement_problem.RunBoj1475()
-	recursive_problem.RunPrac01()
+	//recursive_problem.RunPrac01()
+	recursive_problem.RunPrac02()
 }
