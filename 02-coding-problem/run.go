@@ -1,6 +1,6 @@
 package main
 
-import "github.com/cogito1016/golang/02-coding-problem/recursive_problem"
+import "github.com/cogito1016/golang/02-coding-problem/greedy_problem"
 
 func main() {
 	// fmt.Println("Hello World")
@@ -52,5 +52,7 @@ func main() {
 	//recursive_problem.RunPrac02()
 	//recursive_problem.RunBoj2747()
 	//recursive_problem.RunBoj1074()
-	recursive_problem.RunBoj1074Prac03()
+	//recursive_problem.RunBoj1074Prac03()
+	//recursive_problem.RunBoj7490()
+	greedy_problem.RunBoj2720()
 }
