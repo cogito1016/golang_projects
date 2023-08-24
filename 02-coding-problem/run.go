@@ -54,5 +54,6 @@ func main() {
 	//recursive_problem.RunBoj1074()
 	//recursive_problem.RunBoj1074Prac03()
 	//recursive_problem.RunBoj7490()
-	greedy_problem.RunBoj2720()
+	//greedy_problem.RunBoj2720()
+	greedy_problem.RunBoj10162()
 }
