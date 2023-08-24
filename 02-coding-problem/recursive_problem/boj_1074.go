@@ -3,7 +3,6 @@ package recursive_problem
 import (
 	"bufio"
 	"fmt"
-	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -26,10 +25,37 @@ func RunBoj1074() {
 	targetX = c
 	result = 0
 
-	N = int(math.Pow(float64(2), float64(N)))
-	z_recursive(N, 0, 0)
+	result := zOrderTraversal(N, r, c)
+	fmt.Println(result)
 }
 
+func zOrderTraversal(N, r, c int) int {
+	result := 0
+
+	for N > 0 {
+		size := 1 << uint(N-1)
+
+		if r < size && c < size {
+
+		} else if r < size && c >= size {
+			result += size * size
+			c -= size
+		} else if r >= size && c < size {
+			result += 2 * size * size
+			r -= size
+		} else {
+			result += 3 * size * size
+			r -= size
+			c -= size
+		}
+
+		N--
+	}
+
+	return result
+}
+
+//정석적인방법, 그러나 최악의경우 시간초과가 발생한다.
 func z_recursive(n int, y int, x int) {
 	if n == 2 {
 		if y == targetY && x == targetX {
@@ -59,4 +85,4 @@ func z_recursive(n int, y int, x int) {
 	z_recursive(n/2, y, x+n/2)
 	z_recursive(n/2, y+n/2, x)
 	z_recursive(n/2, y+n/2, x+n/2)
-}
+//}
