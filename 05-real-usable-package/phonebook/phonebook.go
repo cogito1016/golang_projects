@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"strconv"
 )
 
@@ -30,10 +31,27 @@ func list() {
 
 func main() {
 	for i := 0; i < 10; i++ { //dummy
-		entry := Entry{name: "kim", surname: "sur" + strconv.Itoa(i), tel: "010-0000-1111"}
+		entry := Entry{name: "kim", surname: "sur" + strconv.Itoa(i), tel: "010-" + setRandomNumber(4) + "-" + setRandomNumber(4)}
 		data = append(data, entry)
 	}
 
 	fmt.Println(*search("sur9"))
 	list()
 }
+
+func setDummyData() {
+
+}
+
+func setRandomNumber(len int) string { //자릿수를받아 랜덤수를 반환
+	var str string
+	for i := 0; i < len; i++ {
+		str += strconv.Itoa(rand.Intn(9))
+	}
+
+	return str
+}
+
+//func setRandomName() string {
+//
+//}
