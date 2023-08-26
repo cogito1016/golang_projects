@@ -31,11 +31,11 @@ func list() {
 
 func main() {
 	for i := 0; i < 10; i++ { //dummy
-		entry := Entry{name: "kim", surname: "sur" + strconv.Itoa(i), tel: "010-" + setRandomNumber(4) + "-" + setRandomNumber(4)}
+		entry := Entry{name: setRandomName(3, 3), surname: setRandomName(4, 8), tel: "010-" + setRandomNumber(4) + "-" + setRandomNumber(4)}
 		data = append(data, entry)
 	}
 
-	fmt.Println(*search("sur9"))
+	fmt.Println(search("sur9"))
 	list()
 }
 
@@ -52,6 +52,20 @@ func setRandomNumber(len int) string { //자릿수를받아 랜덤수를 반환
 	return str
 }
 
-//func setRandomName() string {
-//
-//}
+func setRandomName(minLen, maxLen int) string { //소문자이름 랜덤생성
+	var nameLen int
+
+	if minLen == maxLen {
+		nameLen = minLen
+	} else {
+		nameLen = rand.Intn(maxLen-minLen) + minLen
+	}
+
+	name := ""
+	//아스키코드 a~z 97~122
+	for i := 0; i < nameLen; i++ {
+		name += string(rand.Intn(122-97) + 97)
+	}
+
+	return name
+}
