@@ -1,7 +1,7 @@
 package main
 
 import (
-	array_statement "github.com/cogito1016/golang/00-grammar/array"
+	type_method_state "github.com/cogito1016/golang/00-grammar/type-method"
 )
 
 func main() {
@@ -12,5 +12,6 @@ func main() {
 	// array_statement.AppendExam();
 	// map_state.Run();
 	//struct_state.Run();
-	array_statement.SlicePrac01()
+	//array_statement.SlicePrac01()
+	type_method_state.Run()
 }
