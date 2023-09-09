@@ -399,9 +399,43 @@ func Run(){
 ### 2.12 Type Method 타입메서드
 - 타입메서드는 type키워드로 정의한 타입에 종속된 메서드를 의미한다.
 - 아래와같이 정의 할 수 있다.
+- 타입메서드를 통해 Go언어에서도 객체지향 프로그래밍이 가능하다.
 ```go
 type ar2x2 [2][2]int
 ```
+
+### 2.13 Interface 인터페이스
+- 인터페이스는 구현해야할 메서드의 집합이다
+- 어떤 데이터타입이 인터페이스를 만족하려면 해당 인터페이스가 요구하는 타입메서드를 구현해야한다
+- sort.Sort는 sort.Interface라는 인터페이스를 만족하는 파라미터를 넘겨야하는데,
+```go
+func Sort(data Interface) {
+	n := data.Len()
+	if n <= 1 {
+		return
+	}
+	limit := bits.Len(uint(n))
+	pdqsort(data, 0, n, limit)
+}
+```
+- sort.Interface를 예로들어보자면, 
+  - Len, Less, Swap을 구현해야한다. 
+  - 그렇지않으면서 sort.Sort()메서드를 사용하려고 한다면? 아래메세지를 받게된다.
+```go
+Cannot use '(data)' (type []S2) as the type Interface Type does not implement 'Interface' as some methods are missing: Len() int Less(i int, j int) bool Swap(i int, j int)
+```
+- (대충 인터페이스가 요구하는 것들 구현하라는 내용)
+   
+ 
+- 그 외에도, 빈 인터페이스라는 개념이 존재한다.
+- 빈 인터페이스는 모든 타입이 구현하고있는 인터페이스이다.
+- 빈 인터페이스를 만족하는 파라미터를 받는 함수가있다고했을 때, 이 함수의 내용은 '모든 타입을 만족하는' 구문이여야 오류가발생하지 않을것이다.
+```go
+func Print(a interface{}){
+	fmt.Println(a)
+}
+```
+- 따라서 경우에 따라, 매우매우 위험한 구문이 될 수 있다.
 
 ## 3.모듈
 
