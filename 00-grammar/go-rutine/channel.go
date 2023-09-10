@@ -23,22 +23,10 @@ func RunChannelBasic() {
 
 	//버퍼를사용하지않는 채널
 	ch := make(chan bool)
-	for i := 0; i < 5; i++ {
-		go printer(ch)
-	}
+	go printerRefactored(ch)
 
-	n := 0
-	for i := range ch {
+	for i := range ch { //개선된코드에서는 ch가 이미닫혔기때문에 range가 스스로 종료한다.
 		fmt.Println(i)
-		if i == true {
-			n++
-		}
-
-		if n > 2 {
-			fmt.Println("n: ", n)
-			close(ch) //채널을닫는다
-			break
-		}
 	}
 
 	for i := 0; i < 5; i++ {
@@ -56,7 +44,10 @@ func printer(ch chan bool) {
 }
 
 func printerRefactored(ch chan<- bool) { //매개변수로받는 채널을 쓰기전용으로 만든다.
-	ch <- true
+	for i := 0; i < 5; i++ {
+		ch <- true
+	}
+	close(ch)
 }
 
 func writeToChannelRefactored(c chan<- int, x int) { //매개변수로받는 채널을 쓰기전용으로 만든다.

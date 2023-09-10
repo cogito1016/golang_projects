@@ -488,8 +488,34 @@ func f2(out <-chan int, in chan<- int){
 	in <- x
 	return
 }
-
 ```
+#### 2.14.4. 경쟁상태 감지기
+- go run -race 를 사용하면 경쟁상태 감지기가 작동한 결과가 출력된다.
+- 아래는 예시인데, 채널을 닫은것과 썼을때의 순서를 모르기에 경쟁상태가 발생했다.
+```go
+==================
+WARNING: DATA RACE
+Write at 0x00c000104010 by main goroutine:
+github.com/cogito1016/golang/00-grammar/go-rutine.RunChannelBasic()
+/00-grammar/go-rutine/channel.go:39 +0x3ac
+
+//39라인에 채널을 닫았다.
+
+Previous read at 0x00c000104010 by goroutine 8:
+github.com/cogito1016/golang/00-grammar/go-rutine.printer()
+/00-grammar/go-rutine/channel.go:55 +0x34
+
+//55라인에 채널에 쓰기를했다
+
+Goroutine 8 (running) created at:
+github.com/cogito1016/golang/00-grammar/go-rutine.RunChannelBasic()
+/00-grammar/go-rutine/channel.go:27 +0x20c
+```
+- 데이터를 쓰는 작업을 여러 고루틴이아니라 하나의 고루틴으로 처리하고
+- 그 고루틴 함수에서 채널을 닫는것으로 마무리한다면
+- 한 고루틴에서 모든 데이터를 쓰고 채널까지닫았으니 
+  - 모든일이 순차적으로 일어나므로
+  - 경쟁상태도 발생하지않고 range또한 스스로 종료된다.
 
 
 ## 3.모듈
