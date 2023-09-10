@@ -54,3 +54,20 @@ func writeToChannel(c chan int, x int) {
 func printer(ch chan bool) {
 	ch <- true
 }
+
+func printerRefactored(ch chan<- bool) { //매개변수로받는 채널을 쓰기전용으로 만든다.
+	ch <- true
+}
+
+func writeToChannelRefactored(c chan<- int, x int) { //매개변수로받는 채널을 쓰기전용으로 만든다.
+	fmt.Println("1", x)
+	c <- x
+	fmt.Println("2", x)
+}
+
+func f2(out <-chan int, in chan<- int) {
+	x := <-out
+	fmt.Println("Read (f2):", x)
+	in <- x
+	return
+}

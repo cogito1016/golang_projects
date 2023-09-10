@@ -480,6 +480,17 @@ waitGroup.Wait()
 ```go
 channel := make(chan int,1) //1의 크기를 갖는 버퍼채널
 ```
+- 닫힌 채널에서 값을 가져가면 해당 채널 타입의 제로벨류를 반환한다.
+- 이 뿐만아니라 다양한 문제를 방지하고자, 매개변수로 채널을 전달 할 때 읽기/쓰기 전용인지를 명시할 수 있다.
+```go
+func f2(out <-chan int, in chan<- int){
+	x := <-out;
+	in <- x
+	return
+}
+
+```
+
 
 ## 3.모듈
 
