@@ -15,5 +15,6 @@ func main() {
 	//_interface_state.Run()
 	//type_assertion_switch.RunJsonChecker()
 	//go_rutine.RunBasic()
-	go_rutine.RunWaitGoRutineDone()
+	//go_rutine.RunWaitGoRutineDone()
+	go_rutine.RunChannelBasic()
 }
