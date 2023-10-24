@@ -18,5 +18,7 @@ func main() {
 	//go_rutine.RunWaitGoRutineDone()
 	//go_rutine.RunChannelBasic()
 	//go_rutine.RunGoRutineVariables()
-	practice_23_10_24.Run고루틴은순서보장이안된다()
+	//practice_23_10_24.Run고루틴은순서보장이안된다()
+	//practice_23_10_24.Run고루틴을끝날때까지기다리기Before()
+	practice_23_10_24.Run고루틴을끝날때까지기다리기After()
 }
