@@ -61,5 +61,6 @@ func main() {
 	//greedy_problem.RunBoj1789()
 	//greedy_problem.RunBoj14916()
 	//greedy_problem.RunBoj1026()
-	greedy_problem.RunBoj2217()
+	//greedy_problem.RunBoj2217()
+	greedy_problem.RunBoj13305()
 }
