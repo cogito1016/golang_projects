@@ -1,6 +1,8 @@
 package main
 
-import go_rutine "github.com/cogito1016/golang/00-grammar/go-rutine"
+import (
+	go_rutine "github.com/cogito1016/golang/00-grammar/go-rutine/23_10_24_practice"
+)
 
 func main() {
 	// grammar.Run();

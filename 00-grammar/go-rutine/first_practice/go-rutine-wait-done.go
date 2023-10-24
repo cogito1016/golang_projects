@@ -1,4 +1,4 @@
-package go_rutine
+package first_practice
 
 import (
 	"fmt"
