@@ -1,4 +1,4 @@
-package _3_10_24_practice
+package practice_23_10_24
 
 import (
 	"fmt"

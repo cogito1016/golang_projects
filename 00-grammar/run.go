@@ -1,8 +1,6 @@
 package main
 
-import (
-	go_rutine "github.com/cogito1016/golang/00-grammar/go-rutine/23_10_24_practice"
-)
+import "github.com/cogito1016/golang/00-grammar/go-rutine/practice_23_10_24"
 
 func main() {
 	// grammar.Run();
@@ -19,5 +17,6 @@ func main() {
 	//go_rutine.RunBasic()
 	//go_rutine.RunWaitGoRutineDone()
 	//go_rutine.RunChannelBasic()
-	go_rutine.RunGoRutineVariables()
+	//go_rutine.RunGoRutineVariables()
+	practice_23_10_24.Run고루틴은순서보장이안된다()
 }
