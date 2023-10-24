@@ -55,11 +55,11 @@ func Run채널에데이터쓰고읽기() {
 	}
 }
 
-func writeToChannel(c chan int, x int) {
+func writeToChannel(c chan<- int, x int) {
 	c <- x
 	close(c)
 }
 
-func printer(ch chan bool) {
+func printer(ch chan<- bool) {
 	ch <- true
 }
