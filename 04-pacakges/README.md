@@ -202,3 +202,17 @@ size := 1 << uint(n-1)
 - postman의 컬렉션을 Export하면 Json이 생성되는데, 이 Json을 기반으로 html문서를 만들어주는 패키지
 - 주의할 점
   - postman export 시 2.1 포멧으로 출력해야 함
+
+### 6.1. 설치
+- https://github.com/aubm/postmanerator
+- mac용 설치파일이 없는걸로 보인다.
+- 따라서, Mac의 경우
+  1. git clone 하여 레포를 받는다
+  2. ```go get github.com/aubm/postmanerator``` 를 통해 postmanerator 패키지를 받는다 
+  3. ```go install```를 통해 바이너리를 생성한다
+  4. clone 받은 레포 접근 > go run ./main.go 를 실행한다.
+     5. 필수 파라미터의 경우 아래 커맨드를 참조한다(실행파일의 경우 사용하는 커맨드이다)
+        6. ```postmanerator -output=./doc.html -collection=$YOUR_PROJECT/postman/collection.json```
+     7. 필자의 경우, 파라미터 전달 이슈가 있어서 아래의 방식으로 해결했다.
+        8. configuration/configuration.go 접근
+        9. func parseCommandFlags()함수 내 collection 및 output의 value값을 하드코딩하여 경로조정
