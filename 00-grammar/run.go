@@ -1,6 +1,8 @@
 package main
 
-import "github.com/cogito1016/golang/00-grammar/go-rutine/practice_23_10_24"
+import (
+	"github.com/cogito1016/golang/00-grammar/go-rutine"
+)
 
 func main() {
 	// grammar.Run();
@@ -23,5 +25,5 @@ func main() {
 	//practice_23_10_24.Run고루틴을끝날때까지기다리기After()
 	//practice_23_10_24.Run고루틴으로여러파일생성()
 	//practice_23_10_24.Run채널에데이터쓰고읽기()
-	practice_23_10_24.Run채널에데이터쓰고읽기해결()
+	go_rutine.Run채널에데이터쓰고읽기해결()
 }

@@ -1,4 +1,4 @@
-package practice_23_10_24
+package go_rutine
 
 import (
 	"bufio"
