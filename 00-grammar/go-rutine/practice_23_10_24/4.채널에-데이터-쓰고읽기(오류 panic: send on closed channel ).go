@@ -36,6 +36,8 @@ func Run채널에데이터쓰고읽기() {
 	ch := make(chan bool)
 	for i := 0; i < 5; i++ {
 		go printer(ch)
+		//--race결과 3.Previous read at 0x00c000186010 by goroutine 9:
+		//--race결과 4.Goroutine 9 (running) created at:
 	}
 	n := 0
 	for i := range ch {
@@ -45,7 +47,7 @@ func Run채널에데이터쓰고읽기() {
 		}
 		if n > 2 {
 			fmt.Println("n : ", n)
-			close(ch)
+			close(ch) //--race결과 1.Write at 0x00c000186010 by main goroutine:
 			break
 		}
 	}
@@ -61,5 +63,15 @@ func writeToChannel(c chan<- int, x int) {
 }
 
 func printer(ch chan<- bool) {
-	ch <- true
+	ch <- true //--race결과 2.Previous read at 0x00c000186010 by goroutine 9:
 }
+
+/**
+--race결과
+채널을 닫는것과 채널에 쓰는 코드가 공존한다.
+채널에 쓰는것이 고 루틴에 의해 실행된다.
+고 루틴의 실행순서는 보장될 수 없으므로,
+채널닫기, 채널쓰기의 순서도 보장할 수 없다.
+따라서 경쟁상태이다.
+이를 해결하기 위해서는 printer()함수의 구현을 변경해야한다.
+*/
