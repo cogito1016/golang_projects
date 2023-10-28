@@ -40,7 +40,7 @@ func Run채널에데이터쓰고읽기() {
 		//--race결과 4.Goroutine 9 (running) created at:
 	}
 	n := 0
-	for i := range ch {
+	for i := range ch { //채널을 사용한 range문은 break나 채널이 닫힐경우에만 빠져나온다
 		fmt.Println(i)
 		if i == true {
 			n++
