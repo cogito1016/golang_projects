@@ -517,6 +517,62 @@ github.com/cogito1016/golang/00-grammar/go-rutine.RunChannelBasic()
   - 모든일이 순차적으로 일어나므로
   - 경쟁상태도 발생하지않고 range또한 스스로 종료된다.
 
+#### 2.14.5. SELECT 키워드
+- SELECT키워드는 여러 채널을 동시에 다룰 때 사용한다.
+- 여러 채널에 대한 논블러킹 연산을 처리한다.
+- Switch구문과 비슷하여 CASE와 DEFAULT설정이 가능하다.
+- SELECT키워드는 return문이 있어야 종료된다.
+- return문이 없다면 <-time.After(4*time.Second)와 같은 케이스로 출구전략을 마련해도 된다.
+
+- select를 사용하여 채널처리를 하는 코드이다.
+```go
+func sender(ch chan int) {
+    for i := 0; i < 5; i++ {
+        ch <- i
+        time.Sleep(time.Millisecond * 500)
+    }
+    close(ch)
+}
+
+func main() {
+    ch := make(chan int)
+    go sender(ch)
+
+    for {
+        select {
+        case val, ok := <-ch:
+            if !ok {
+                fmt.Println("Channel is closed.")
+                return
+            }
+            fmt.Printf("Received: %d\n", val)
+        }
+    }
+}
+```
+- 같은 로직이지만, select없이 for-range로 처리한 구문이다.
+```go
+func sender(ch chan int) {
+    for i := 0; i < 5; i++ {
+        ch <- i
+        time.Sleep(time.Millisecond * 500)
+    }
+    close(ch)
+}
+
+func main() {
+    ch := make(chan int)
+    go sender(ch)
+
+    for val := range ch {
+        fmt.Printf("Received: %d\n", val)
+    }
+    fmt.Println("Channel is closed.")
+}
+```
+- select vs for-range를 통한 채널처리
+  - 요구조건에 따라 다를것이다.
+  - 다양한 채널을 사용할 때, 채널처리 로직을 분리하여 관리하는 소요가 있다면 SELECT가 유용할것이다. 
 
 ## 3.모듈
 
