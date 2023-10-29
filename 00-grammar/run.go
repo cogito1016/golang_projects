@@ -25,5 +25,6 @@ func main() {
 	//practice_23_10_24.Run채널에데이터쓰고읽기()
 	//go_rutine.Run채널에데이터쓰고읽기해결()
 	//go_rutine.Run고루틴타임아웃_1()
-	go_rutine.Run고루틴타임아웃_2()
+	//go_rutine.Run고루틴타임아웃_2()
+	go_rutine.Run버퍼채널기본()
 }
