@@ -521,7 +521,7 @@ github.com/cogito1016/golang/00-grammar/go-rutine.RunChannelBasic()
 - SELECT키워드는 여러 채널을 동시에 다룰 때 사용한다.
 - 여러 채널에 대한 논블러킹 연산을 처리한다.
 - Switch구문과 비슷하여 CASE와 DEFAULT설정이 가능하다.
-- SELECT키워드는 return문이 있어야 종료된다.
+- For구문과 결합한 SELECT키워드는 return문이 있어야 종료된다.
 - return문이 없다면 <-time.After(4*time.Second)와 같은 케이스로 출구전략을 마련해도 된다.
 
 - select를 사용하여 채널처리를 하는 코드이다.

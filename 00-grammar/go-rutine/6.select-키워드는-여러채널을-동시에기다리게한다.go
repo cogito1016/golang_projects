@@ -17,7 +17,7 @@ func RunSELECT키워드() {
 
 	waitGroup.Add(1)
 	go func() {
-		gen(0, 2*n, createNumber, end)
+		//gen(0, 2*n, createNumber, end)
 		waitGroup.Done()
 	}()
 }
