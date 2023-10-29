@@ -24,5 +24,6 @@ func main() {
 	//practice_23_10_24.Run고루틴으로여러파일생성()
 	//practice_23_10_24.Run채널에데이터쓰고읽기()
 	//go_rutine.Run채널에데이터쓰고읽기해결()
-	go_rutine.Run고루틴타임아웃_1()
+	//go_rutine.Run고루틴타임아웃_1()
+	go_rutine.Run고루틴타임아웃_2()
 }
