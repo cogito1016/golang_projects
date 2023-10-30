@@ -2,31 +2,40 @@ package practice_23_10_30
 
 import (
 	"fmt"
-	"math/rand"
 	"sync"
 	"time"
 )
 
 var wg sync.WaitGroup
 
+/*
+*
+Goroutines and Channels Basics:
+- Create a program that uses two goroutines.
+The first one should generate numbers from 1 to 10 and send them to the second goroutine using a channel.
+The second goroutine should square the received numbers and print the squared results.
+*/
 func RunChannelBasic() {
 	ch := make(chan int)
 
 	wg.Add(1)
 	go func(c chan<- int) {
-		for i := 0; i < 5; i++ {
-			time.Sleep(time.Second)
-			c <- rand.Intn(10)
+		defer close(c)
+		for i := 1; i <= 10; i++ {
+			c <- i
 		}
-		c = nil //의도적으로 블록시킨다, close를 할 시 select input := <-c에서 제로값을 무수히많이 받아버림
 	}(ch)
 
 	go func(c chan int) {
 		for {
 			select {
-			case input := <-c:
-				fmt.Println(input)
-			case <-time.After(10 * time.Second):
+			case input, ok := <-c: //닫힌거면 ok가 false
+				if !ok {
+					fmt.Println("Channel is closed")
+					return
+				}
+				fmt.Println(input * input)
+			case <-time.After(20 * time.Second): //첫 번째 고루틴이 충분히 끝나고도 남을 시간으로 타임아웃설정
 				fmt.Println("Time over ")
 				wg.Done()
 				return
