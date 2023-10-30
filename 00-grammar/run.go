@@ -1,6 +1,6 @@
 package main
 
-import go_rutine "github.com/cogito1016/golang/00-grammar/go-rutine"
+import "github.com/cogito1016/golang/00-grammar/go-rutine/practice_23_10_30"
 
 func main() {
 	// grammar.Run();
@@ -28,5 +28,6 @@ func main() {
 	//go_rutine.Run고루틴타임아웃_2()
 	//go_rutine.Run버퍼채널기본()
 	//go_rutine.RunNIL채널기본()
-	go_rutine.Run워커풀기본()
+	//go_rutine.Run워커풀기본()
+	practice_23_10_30.RunChannelBasic()
 }
