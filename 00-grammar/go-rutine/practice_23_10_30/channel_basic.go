@@ -17,6 +17,7 @@ The second goroutine should square the received numbers and print the squared re
 */
 func RunChannelBasic() {
 	ch := make(chan int)
+	timeout := 20 * time.Second
 
 	wg.Add(1)
 	go func(c chan<- int) {
@@ -27,6 +28,7 @@ func RunChannelBasic() {
 	}(ch)
 
 	go func(c chan int) {
+		defer wg.Done()
 		for {
 			select {
 			case input, ok := <-c: //닫힌거면 ok가 false
@@ -35,9 +37,8 @@ func RunChannelBasic() {
 					return
 				}
 				fmt.Println(input * input)
-			case <-time.After(20 * time.Second): //첫 번째 고루틴이 충분히 끝나고도 남을 시간으로 타임아웃설정
+			case <-time.After(timeout): //첫 번째 고루틴이 충분히 끝나고도 남을 시간으로 타임아웃설정
 				fmt.Println("Time over ")
-				wg.Done()
 				return
 			}
 		}
