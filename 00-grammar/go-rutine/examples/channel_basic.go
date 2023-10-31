@@ -1,4 +1,4 @@
-package practice_23_10_30
+package examples
 
 import (
 	"fmt"
