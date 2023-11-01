@@ -1,6 +1,6 @@
 package main
 
-import "github.com/cogito1016/golang/02-coding-problem/greedy_problem"
+import "github.com/cogito1016/golang/02-coding-problem/array_problem"
 
 func main() {
 	// fmt.Println("Hello World")
@@ -62,5 +62,6 @@ func main() {
 	//greedy_problem.RunBoj14916()
 	//greedy_problem.RunBoj1026()
 	//greedy_problem.RunBoj2217()
-	greedy_problem.RunBoj13305()
+	//greedy_problem.RunBoj13305()
+	array_problem.RunBoj2566()
 }
