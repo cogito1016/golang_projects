@@ -8,6 +8,7 @@ import (
 	"strings"
 )
 
+// 시간복잡도는 O(81) -> O(1)
 func RunBoj2566() {
 	var x, y, max int
 
