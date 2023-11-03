@@ -87,7 +87,12 @@ https://github.com/golang/tools/blob/master/gopls/doc/workspace.md.go list
 ## 1.3.GOPATH
 
 - GO를 설치하면 기본적으로 /Users/username/go에 설치된다.
-- 기본적으로 이곳이 GOPATH이며, 이곳에만 코드를 작성할 수 있다.
+- 기본적으로 이곳이 GOPATH이다.
+- GOPATH는 여러곳에 둘 수 있다.
+- 아래는 기존 GOPATH를 포함시키면서 새로운 PATH를 추가하는 방법이다.
+- ```bash
+   export GOPATH=$GOPATH:/appendPath
+  ```
 
 ### 1.3.1.GO의 프로젝트 구조
 
